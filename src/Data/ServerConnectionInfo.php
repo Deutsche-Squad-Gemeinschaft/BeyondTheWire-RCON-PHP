@@ -1,6 +1,6 @@
 <?php
 
-namespace DSG\SquadRCON\Data;
+namespace DSG\BeyondTheWireRCON\Data;
 
 class ServerConnectionInfo {
     const DEFAULT_SOCKET_TIMEOUT_SECONDS = 3;

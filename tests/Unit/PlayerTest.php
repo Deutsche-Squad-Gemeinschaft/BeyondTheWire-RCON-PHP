@@ -1,8 +1,8 @@
 <?php
 
-namespace DSG\SquadRCON\Tests\Unit;
+namespace DSG\BeyondTheWireRCON\Tests\Unit;
 
-class PlayerTest extends \DSG\SquadRCON\Tests\TestCase {
+class PlayerTest extends \DSG\BeyondTheWireRCON\Tests\TestCase {
     /**
      * Placeholder
      * 

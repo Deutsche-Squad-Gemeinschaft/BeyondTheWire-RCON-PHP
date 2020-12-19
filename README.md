@@ -1,29 +1,29 @@
 <p align="center">
-    <img align="center" alt="Squad RCON PHP Logo" src="https://raw.githubusercontent.com/Deutsche-Squad-Gemeinschaft/squad-rcon-php/master/logo.svg">
+    <img align="center" alt="Beyond the Wire RCON PHP Logo" src="https://raw.githubusercontent.com/Deutsche-Squad-Gemeinschaft/BeyondTheWire-RCON-PHP/master/logo.svg">
 </p>
 <div align="center">
-    <h1 align="center">Squad RCON PHP</h1>
+    <h1 align="center">Beyond the Wire RCON PHP</h1>
     <p align="center">
-        <b>RCON PHP wrapper for Squad server management</b>
+        <b>RCON PHP wrapper for Beyond the Wire server management</b>
     </p>
     <hr>
-    <a href="https://github.com/Deutsche-Squad-Gemeinschaft/squad-rcon-php/actions">
-        <img alt="Deutsche Squad Gemeinschaft" src="https://github.com/Deutsche-Squad-Gemeinschaft/squad-rcon-php/workflows/CI/badge.svg">
+    <a href="https://github.com/Deutsche-Squad-Gemeinschaft/BeyondTheWire-RCON-PHP/actions">
+        <img alt="Deutsche Squad Gemeinschaft" src="https://github.com/Deutsche-Squad-Gemeinschaft/BeyondTheWire-RCON-PHP/workflows/CI/badge.svg">
     </a>
-    <a href="https://codecov.io/gh/Deutsche-Squad-Gemeinschaft/squad-rcon-php">
-        <img alt="Deutsche Squad Gemeinschaft" src="https://codecov.io/gh/Deutsche-Squad-Gemeinschaft/squad-rcon-php/branch/master/graph/badge.svg">
+    <a href="https://codecov.io/gh/Deutsche-Squad-Gemeinschaft/BeyondTheWire-RCON-PHP">
+        <img alt="Deutsche Squad Gemeinschaft" src="https://codecov.io/gh/Deutsche-Squad-Gemeinschaft/BeyondTheWire-RCON-PHP/branch/master/graph/badge.svg">
     </a>
-    <a href="https://packagist.org/packages/dsg/squad-rcon-php">
-        <img alt="Total Downloads" src="https://poser.pugx.org/dsg/squad-rcon-php/downloads.png">
+    <a href="https://packagist.org/packages/dsg/beyondthewire-rcon-php">
+        <img alt="Total Downloads" src="https://poser.pugx.org/dsg/beyondthewire-rcon-php/downloads.png">
     </a>
-    <a href="https://packagist.org/packages/dsg/squad-rcon-php">
-        <img alt="Latest Stable Version" src="https://poser.pugx.org/dsg/squad-rcon-php/v/stable">
+    <a href="https://packagist.org/packages/dsg/beyondthewire-rcon-php">
+        <img alt="Latest Stable Version" src="https://poser.pugx.org/dsg/beyondthewire-rcon-php/v/stable">
     </a>
-    <a href="https://packagist.org/packages/dsg/squad-rcon-php">
-        <img alt="Latest Unstable Version" src="https://poser.pugx.org/dsg/squad-rcon-php/v/unstable">
+    <a href="https://packagist.org/packages/dsg/beyondthewire-rcon-php">
+        <img alt="Latest Unstable Version" src="https://poser.pugx.org/dsg/beyondthewire-rcon-php/v/unstable">
     </a>
-    <a href="https://packagist.org/packages/dsg/squad-rcon-php">
-        <img alt="License" src="https://poser.pugx.org/dsg/squad-rcon-php/license">
+    <a href="https://packagist.org/packages/dsg/beyondthewire-rcon-php">
+        <img alt="License" src="https://poser.pugx.org/dsg/beyondthewire-rcon-php/license">
     </a>
     <br>
     <a href="https://dsg-gaming.de">
@@ -41,10 +41,10 @@ If you have any questions or need help with getting started with RCON in OWI gam
 
 You can install this package by using composer and the following command:
 ```
-composer require dsg/squad-rcon-php
+composer require dsg/beyondthewire-rcon-php
 ```
 
-The code will then be available under the `DSG\SquadRCON` namespace.
+The code will then be available under the `DSG\BeyondTheWireRCON` namespace.
 
 ## Commands
 
@@ -77,10 +77,14 @@ The code will then be available under the `DSG\SquadRCON` namespace.
 ## USAGE
 
 ### Create an instance
-Instanciate the SquadServer class to open a new RCON connection. This will throw an Exception if no connection can be made.
+Instanciate the BeyondTheWireServer class to open a new RCON connection. This will throw an Exception if no connection can be made.
 ```php
-/** @var SquadServer */
-$server = new SquadServer(new ServerConnectionInfo('127.0.0.1', 21114, 'YourRconPassword'));
+use DSG\BeyondTheWireRCON\BeyondTheWireServer;
+
+...
+
+/** @var BeyondTheWireServer */
+$server = new BeyondTheWireServer(new ServerConnectionInfo('127.0.0.1', 21114, 'YourRconPassword'));
 ```
 
 ### Get current server population (Teams, Squads, Players)

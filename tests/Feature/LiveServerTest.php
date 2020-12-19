@@ -1,12 +1,12 @@
 <?php
 
-namespace DSG\SquadRCON\Tests\Feature;
+namespace DSG\BeyondTheWireRCON\Tests\Feature;
 
-use DSG\SquadRCON\Data\ServerConnectionInfo;
-use DSG\SquadRCON\SquadServer;
+use DSG\BeyondTheWireRCON\Data\ServerConnectionInfo;
+use DSG\BeyondTheWireRCON\BeyondTheWireServer;
 
-class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
-    private SquadServer $squadServer;
+class LiveServerTest extends \DSG\BeyondTheWireRCON\Tests\TestCase {
+    private BeyondTheWireServer $btwServer;
 
     /**
      * This method is called before each test.
@@ -15,7 +15,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
     {
         parent::setUp();
 
-        $this->squadServer = new SquadServer(new ServerConnectionInfo('172.17.0.2', 21114, 'secret'));
+        $this->btwServer = new BeyondTheWireServer(new ServerConnectionInfo('172.17.0.2', 21114, 'secret'));
     }
 
     /**
@@ -25,7 +25,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_current_map()
     {
-        $this->assertSame('Al Basrah AAS v1', $this->squadServer->currentMap());
+        $this->assertSame('Al Basrah AAS v1', $this->btwServer->currentMap());
     }
 
     /**
@@ -35,7 +35,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_admin_set_next_map()
     {
-        $this->assertTrue($this->squadServer->adminSetNextMap('Al Basrah Insurgency v1'));
+        $this->assertTrue($this->btwServer->adminSetNextMap('Al Basrah Insurgency v1'));
     }
 
     /**
@@ -45,7 +45,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_next_map()
     {
-        $this->assertSame('Al Basrah Insurgency v1', $this->squadServer->nextMap());
+        $this->assertSame('Al Basrah Insurgency v1', $this->btwServer->nextMap());
     }
 
     /**
@@ -55,7 +55,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_list_players()
     {
-        $players = $this->squadServer->listPlayers();
+        $players = $this->btwServer->listPlayers();
 
         $this->assertCount(0, $players);
     }
@@ -67,7 +67,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_list_disconnected_players()
     {
-        $playerList = $this->squadServer->listDisconnectedPlayers();
+        $playerList = $this->btwServer->listDisconnectedPlayers();
 
         $this->assertCount(0, $playerList);
     }
@@ -79,7 +79,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_list_squads()
     {
-        $teams = $this->squadServer->listSquads();
+        $teams = $this->btwServer->listSquads();
 
         foreach ($teams as $team) {
             $this->assertSame(0, count($team->getSquads()));
@@ -93,7 +93,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_server_population()
     {
-        $teams = $this->squadServer->serverPopulation();
+        $teams = $this->btwServer->serverPopulation();
 
         $squadCount = 0;
         $playerCount = 0;
@@ -117,7 +117,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_admin_Broadcast()
     {
-        $this->assertTrue($this->squadServer->adminBroadcast('Hello World!'));
+        $this->assertTrue($this->btwServer->adminBroadcast('Hello World!'));
     }
 
     /**
@@ -127,7 +127,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_admin_change_map()
     {
-        $this->assertTrue($this->squadServer->adminChangeMap('Al Basrah AAS v1'));
+        $this->assertTrue($this->btwServer->adminChangeMap('Al Basrah AAS v1'));
     }
 
     /**
@@ -137,7 +137,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_admin_restart_match()
     {
-        $this->assertTrue($this->squadServer->adminRestartMatch());
+        $this->assertTrue($this->btwServer->adminRestartMatch());
 
         sleep(30);
     }
@@ -149,7 +149,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_admin_end_match()
     {
-        $this->assertTrue($this->squadServer->adminEndMatch());
+        $this->assertTrue($this->btwServer->adminEndMatch());
 
         sleep(30);
     }
@@ -161,7 +161,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_admin_set_max_num_players()
     {
-        $this->assertTrue($this->squadServer->adminSetMaxNumPlayers(78));
+        $this->assertTrue($this->btwServer->adminSetMaxNumPlayers(78));
     }
 
     /**
@@ -171,7 +171,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_admin_set_password()
     {
-        $this->assertTrue($this->squadServer->adminSetServerPassword('secret'));
+        $this->assertTrue($this->btwServer->adminSetServerPassword('secret'));
     }
 
     /**
@@ -181,7 +181,7 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_squad_server_admin_slomo()
     {
-        $this->assertTrue($this->squadServer->adminSlomo(2));
+        $this->assertTrue($this->btwServer->adminSlomo(2));
     }
 
     /**
@@ -191,6 +191,6 @@ class LiveServerTest extends \DSG\SquadRCON\Tests\TestCase {
      */
     public function test_squad_server_disconnect()
     {
-        $this->assertNull($this->squadServer->disconnect());
+        $this->assertNull($this->btwServer->disconnect());
     }
 }

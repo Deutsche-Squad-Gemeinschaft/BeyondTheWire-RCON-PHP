@@ -1,10 +1,10 @@
 <?php
 
-namespace DSG\SquadRCON\Tests\Unit;
+namespace DSG\BeyondTheWireRCON\Tests\Unit;
 
-use DSG\SquadRCON\Data\ServerConnectionInfo;
+use DSG\BeyondTheWireRCON\Data\ServerConnectionInfo;
 
-class ServerConnectionInfoTest extends \DSG\SquadRCON\Tests\TestCase {
+class ServerConnectionInfoTest extends \DSG\BeyondTheWireRCON\Tests\TestCase {
     /**
      * Validates the ServerConnectionInfo can be initialized
      * 

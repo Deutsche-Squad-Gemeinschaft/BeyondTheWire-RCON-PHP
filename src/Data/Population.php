@@ -1,6 +1,6 @@
 <?php
 
-namespace DSG\SquadRCON\Data;
+namespace DSG\BeyondTheWireRCON\Data;
 
 class Population
 {

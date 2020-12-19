@@ -1,6 +1,6 @@
 <?php
 
-namespace DSG\SquadRCON\Tests;
+namespace DSG\BeyondTheWireRCON\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

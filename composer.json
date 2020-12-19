@@ -1,5 +1,5 @@
 {
-    "name": "dsg/squad-rcon-php",
+    "name": "dsg/beyondthewire-rcon-php",
     "description": "Squad Server RCon library",
     "type": "library",
     "license": "MIT",
@@ -12,12 +12,12 @@
     },
     "autoload": {
         "psr-4": {
-            "DSG\\SquadRCON\\" : "src/"
+            "DSG\\BeyondTheWireRCON\\" : "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "DSG\\SquadRCON\\Tests\\": "tests/"
+            "DSG\\BeyondTheWireRCON\\Tests\\": "tests/"
         }
     }
 }
